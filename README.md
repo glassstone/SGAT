@@ -1,7 +1,7 @@
 # [MIA 2023] SGAT
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S1361841523001895-ga1_lrg.jpg)
-![](https://ars.els-cdn.com/content/image/1-s2.0-S1361841523001895-gr6_lrg.jpg)
-Inspired by the way that the visual cortex adaptively responds to the type of stimulus, the Stimulus-guided adaptive transformer(SGAT-Net) network is proposed to produce the local-and-global compound features based on inductive bias and self-attention mechanism to take into account the vascular details and anatomy structures. The evaluation is implemented on the largest fundus image dataset (FIVES) and three popular retinal image datasets (DRIVE, STARE, CHASEDB1) and experimental results show that the proposed method achieves a competitive performance over the other existing method.
+
+Inspired by the way that the visual cortex adaptively responds to the type of stimulus, the Stimulus-guided adaptive transformer(SGAT-Net) network is proposed to produce the local-and-global compound features based on inductive bias and self-attention mechanism to take into account the vascular details and anatomy structures.
 
 This repo implementation is based on PyTorch. More details can be found in [Paper](https://doi.org/10.1016/j.media.2023.102929)
 
