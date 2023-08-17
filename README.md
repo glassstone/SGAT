@@ -1,9 +1,11 @@
+# [MIA 2023] Stimulus-guided adaptive transformer network for retinal blood vessel segmentation in fundus images
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S1361841523001895-ga1_lrg.jpg)
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S1361841523001895-gr6_lrg.jpg)
 
 > More details can be found in [Paper](https://doi.org/10.1016/j.media.2023.102929)
 
-> Please use the following BibTeX entry to cite our paper:
+#Citation
+> If you find this paper useful, please use the following BibTeX entry to cite our paper:
 
 ```
 @article{lin2023stimulus,
