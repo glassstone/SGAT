@@ -3,7 +3,7 @@
 
 Inspired by the way that the visual cortex adaptively responds to the type of stimulus, the Stimulus-guided adaptive transformer(SGAT-Net) network is proposed to produce the local-and-global compound features based on inductive bias and self-attention mechanism to take into account the vascular details and anatomy structures.
 
-This repo implementation is based on PyTorch. More details can be found in [Paper](https://doi.org/10.1016/j.media.2023.102929)
+This repo implementation is based on PyTorch. More details can be found in [Paper](https://doi.org/10.1016/j.media.2023.102929).
 
 # Citation
 If you find this paper useful, please use the following BibTeX entry to cite our paper:
