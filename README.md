@@ -1,5 +1,6 @@
 **Stimulus-guided adaptive transformer network for retinal blood vessel segmentation in fundus images**
 > More details can be found in [Paper](https://doi.org/10.1016/j.media.2023.102929)
+
 > Please use the following BibTeX entry to cite our paper:
 
 ```
