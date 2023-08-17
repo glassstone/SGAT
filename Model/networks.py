@@ -5,82 +5,8 @@ from torch.nn import init
 import functools
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
-# from Model.fcn import FCN8
-from Model.segnet import SegNet
-from Model.segnet import SegResNet
-from Model.enet import ENet
-from Model.gcn import GCN
-from Model.deeplabv3_plus import DeepLab
-# from Model.duc_hdc import DeepLab_DUC_HDC
-# from Model.upernet import UperNet
-from Model.pspnet import PSPNet
-# from Model.pspnet import PSPDenseNet
-from Model.unet import sk,cbam
-from Model.sktr00 import SKTR00
-from Model.sktr01 import SKTR01
-from Model.sktr02 import SKTR02
-from Model.sktr10 import SKTR10
-from Model.sktr11 import SKTR11
-from Model.sktr12 import SKTR12
-from Model.sktr20 import SKTR20
-from Model.sktr21 import SKTR21
-from Model.sktr22 import SKTR22
-from Model.sktr105 import SKTR
-from Model.swinunet import SwinU
-from Model.vit_seg_modeling import VisionTransformer as TransU
-from Model.dwunet import dwU_Net as Net
-from Model.UCT import UCT as UCT
-from Model.sktr2212conM import SKTR22Concat as SKTR2212conM
-from Model.sktr2212conMM import SKTR22Concat as SKTR2212conMM
-from Model.ResNet import ResNet 
-from Model.ResNetN import ResNetN
-from Model.ResNetm import ResNetm
-from Model.rm import resm
-from Model.rm1 import resm1
-from Model.rmvt import resmvt
-from Model.rmvtl import resmvtl
-from Model.rmvtlh import resmvtlh
-from Model.rmvtll import resmvtll
-from Model.rmsw import resmsw
-from Model.rmswl import resmswl
-from Model.rmswlh import resmswlh
 from Model.rmvtp import resmvtp
-from Model.rmvtlp import resmvtlp
-from Model.rmvtlhp import resmvtlhp
-from Model.rmvtp1 import resmvtp1
-from Model.rmvtlp1 import resmvtlp1
-from Model.rmvtlhp1 import resmvtlhp1
-from Model.resvtlhc import resmvtlhc
-from Model.resvtc import resmvtc
-from Model.resvthc import resmvthc
-from Model.resmvtplarge import resmvtplarge
-from Model.resmswp import resmswp
-from Model.resmswlp import resmswlp
-from Model.rmd import resmd
-from Model.rm1d import resm1d
-from Model.resmswp1 import resmswp1 
-from Model.resmvtpall import resmvtpall
-from Model.resmvtpall128 import resmvtpall128
-from Model.rmvtp128 import resmvtp128
-from Model.rmvtp512L import resmvtp512L
-from Model.rmvtp512L2 import resmvtp512L2
-from Model.rmvtp512L2residual import resmvtp512L2residual
-from Model.resmvtcombine import resmvtcombine
-from Model.resmvtpskip import resmvtpskip
-from Model.resmvtpskipL import resmvtpskipL
-from Model.resmvtpskip256 import resmvtpskip256
-from Model.resmvtpswskip256 import resmvtpswskip256
-from Model.resmvtprelu import resmvtprelu
-from Model.resmvtp77 import resmvtp77
-from Model.resmvtp77res import resmvtp77res
-from Model.rmvtnc import resmvtnc
-from Model.rmvto import resmvto
-from Model.rmvtpnc import resmvtpnc
-from Model.rmvtpo import resmvtpo
-from Model.rmvtlhnc import resmvtlhnc
-from Model.rmvtlho import resmvtlho
-from Model.rmvtlhpnc import resmvtlhpnc
-from Model.rmvtlhpo import resmvtlhpo
+
 ###############################################################################
 # Functions
 ###############################################################################
@@ -243,10 +169,7 @@ def define_G(input_nc, output_nc, ngf, which_model_netG, norm='batch', use_dropo
         netG = UnetGenerator(input_nc, output_nc, 8, ngf, norm_layer=norm_layer, use_dropout=use_dropout, gpu_ids=gpu_ids)
     elif which_model_netG == 'resnet_9blocks_class':
         netG = ResnetGenerator_with_Classifier(input_nc, output_nc, ngf, num_classes=num_classes, norm_layer=norm_layer, use_dropout=use_dropout, n_blocks=9, gpu_ids=gpu_ids,n_downsampling=n_downsampling)
-    elif which_model_netG in ['R2U_Net', 'U_Net', 'AttU_Net', 'R2AttU_Net', 'AttU_Net_small','SKTR00','SKTR01','SKTR02','SKTR10','SKTR11','SKTR12','SKTR20','SKTR21','SKTR22','SKTR','SwinU','TransU','dwU_Net','Net','UCT','SKTR2212conM','SKTR2212conMM','ResNet','ResNetm','rescom',
-'resm','resm1','resmvt','resmvtl','resmvtlh','resmvtll','resmsw','resmswl','resmswlh','resmvtp','resmvtlp','resmvtlhp','resmvtp1','resmvtlp1','resmvtlhp1','resmvtlhc','resmvtc','resmvthc',
-'resmvtplarge','resmswp','resmswlp','resmd','resm1d','resmswp1','resmvtpall','resmvtp128','resmvtpall128','resmvtp512L','resmvtp512L2','resmvtp512L2residual','resmvtcombine',
-'resmvtpskip','resmvtpskipL','resmvtpskip256','resmvtpswskip256','resmvtprelu','resmvtp77','resmvtp77res','ResNetN', 'resmvtnc','resmvto','resmvtlhnc','resmvtlho','resmvtpnc','resmvtpo','resmvtlhpnc','resmvtlhpo']:
+    elif which_model_netG in ['resmvtp']:
         netG = UnetGenerator2(input_nc, output_nc,which_model_netG,gpu_ids=gpu_ids)
     elif which_model_netG=='FCN8':
         netG = UnetGenerator3(input_nc, output_nc, which_model_netG ,gpu_ids=gpu_ids)
