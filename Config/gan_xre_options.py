@@ -4,10 +4,8 @@ import torch
 class gan_xre_unetbase3d():
         # dataroot = r'../../Data/DRIVE/'
         dataroot = r'../../Data/800_512/'
-        # dataroot = r'../../800'
-        # dataroot = r'../../patch'
         
-        checkpoints_dir = '../../Result/test_resmvtlhpo_2DCE/'
+        checkpoints_dir = '../../Result/test_resmvtp_2DCE/'
 
         
         
@@ -53,8 +51,7 @@ class gan_xre_unetbase3d():
 #         which_model_netG = 'sk'
 #         which_model_netG = 'GCN'
 
-        # which_model_netG = 'SKTR21'
-        which_model_netG = 'resmvtlhpo'
+        which_model_netG = 'resmvtp'
 
         #************** important change ********************
         dataset_mode = 'aligned_xre'
@@ -86,8 +83,8 @@ class gan_xre_unetbase3d():
         continue_train = False
         epoch_count = 1
         which_epoch = 'lastest'
-        niter = 30
-        niter_decay=70
+        niter = 100
+        niter_decay=100
         beta1 = 0.9
 #         lr = 0.0001
         lr = 0.0001*2
